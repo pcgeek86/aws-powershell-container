@@ -1,0 +1,7 @@
+name: AWS PowerShell
+description: Container image that contains the latest AWS PowerShell module
+inputs:
+outputs:
+runs:
+  using: docker
+  image: Dockerfile
