@@ -19,7 +19,7 @@ $ModuleVersion = (Get-Module -ListAvailable -Name AWS.Tools.Common).Version.ToSt
 
 # Write the module version to the GitHub workspace
 # See: GITHUB_WORKSPACE environment variable https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
-Set-Content -Path $env:GITHUB_WORKSPACE/awspwsh.json -Value (@{ Version = $ModuleVersion } | ConvertTo-Json })
+Set-Content -Path $env:GITHUB_WORKSPACE/awspwsh.json -Value (@{ Version = $ModuleVersion } | ConvertTo-Json)
 
 # Return the AWS Tools version from the script as stdout
 return $ModuleVersion
