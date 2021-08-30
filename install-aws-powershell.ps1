@@ -1,6 +1,7 @@
 # Installs the AWS PowerShell module on the GitHub host, so we can 
 # extract the version number and tag the Docker container image with it.
 
+$ProgressPreference = 'SilentlyContinue'
 
 $WebClient = [System.Net.WebClient]::new()
 $AWSPowerShellURL = 'https://sdk-for-net.amazonwebservices.com/ps/v4/latest/AWS.Tools.zip'
