@@ -30,7 +30,7 @@ jobs:
       - name: Get AWS PowerShell Module Version
         shell: pwsh
         run: |
-          Write-Host -Object '${{ steps.installawspwsh.outputs.MODULE_VERSION }}'
+          Write-Host -Object 'Module version is: ${{ steps.installawspwsh.outputs.MODULE_VERSION }}'
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
