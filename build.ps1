@@ -20,6 +20,7 @@ $ModuleVersion = (Get-Module -ListAvailable -Name AWS.Tools.Common).Version.ToSt
 # Attempt to use the GitHub workflow commands to set a variable
 # See: https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#using-workflow-commands-to-access-toolkit-functions
 Write-Host -Object ('::set-output name=MODULE_VERSION::{0}' -f $ModuleVersion)
+Write-Output -Object ('::set-output name=MODULE_VERSION::{0}' -f $ModuleVersion)
 
 # Return the AWS Tools version from the script as stdout
 return $ModuleVersion
