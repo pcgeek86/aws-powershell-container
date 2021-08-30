@@ -21,5 +21,8 @@ $ModuleVersion = (Get-Module -ListAvailable -Name AWS.Tools.Common).Version.ToSt
 # See: GITHUB_WORKSPACE environment variable https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
 Set-Content -Path $env:GITHUB_WORKSPACE/awspwsh.json -Value (@{ Version = $ModuleVersion } | ConvertTo-Json)
 
+# Spit out the contents of $env:GITHUB_WORKSPACE for inspection purposes
+Get-ChildItem -Path $env:GITHUB_WORKSPACE
+
 # Return the AWS Tools version from the script as stdout
 return $ModuleVersion
