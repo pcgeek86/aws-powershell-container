@@ -40,4 +40,5 @@ jobs:
         run: |
           Write-Host -Object 'Getting module version'
           Write-Host -Object '${{ steps.dockerbuild.outputs.MODULE_VERSION }}'
+          Write-Host -Object '${{ env.MODULE_VERSION }}'
         
