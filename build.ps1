@@ -1,5 +1,7 @@
 #!/usr/bin/env pwsh
 
+$global:ProgressPreference = 'SilentlyContinue'
+
 Set-Location -Path $PSScriptRoot
 
 $WebClient = [System.Net.WebClient]::new()
