@@ -11,4 +11,4 @@ Expand-Archive -Path $DestinationPath -DestinationPath $env:PSModulePath.Split('
 Remove-Item -Path $DestinationPath
 
 $ModuleVersion = (Get-Module -ListAvailable -Name AWS.Tools.Common).Version.ToString()
-Write-Host -Object '::set-output name=MODULE_VERSION::{0}' -f $ModuleVersion
+Write-Host -Object ('::set-output name=MODULE_VERSION::{0}' -f $ModuleVersion)
