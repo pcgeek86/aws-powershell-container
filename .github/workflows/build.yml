@@ -28,9 +28,16 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
+        id: dockerbuild
         uses: docker/build-push-action@v2.6.1
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Grab module version
+        shell: pwsh
+        run: |
+          Write-Output -Object 'Getting module version'
+          Write-Output -Object ${{ steps.dockerbuild.outputs.MODULE_VERSION }}
+        
