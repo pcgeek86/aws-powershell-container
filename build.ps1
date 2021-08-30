@@ -11,5 +11,8 @@ $WebClient.DownloadFile($AWSPowerShellURL, $DestinationPath)
 # Extract the AWS PowerShell module
 Expand-Archive -Path $DestinationPath -DestinationPath $env:PSModulePath.Split(':')[0]
 
+# Clean up the module ZIP file
+Remove-Item -Path $DestinationPath
+
 # Return the AWS Tools version from the script
 return (Get-Module -ListAvailable -Name AWS.Tools.Common).Version
