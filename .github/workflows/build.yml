@@ -21,6 +21,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install AWS PowerShell module locally
+        id: installawspwsh
+        shell: pwsh
+        run: |
+          ./install-aws-powershell.ps1
+          
+      - name: Get AWS PowerShell Module Version
+        shell: pwsh
+        run: |
+          Write-Host -Object '${{ steps.installawspwsh.outputs.MODULE_VERSION }}'
+
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v3.4.1
