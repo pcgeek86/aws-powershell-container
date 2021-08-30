@@ -38,6 +38,6 @@ jobs:
       - name: Grab module version
         shell: pwsh
         run: |
-          Write-Output -Object 'Getting module version'
-          Write-Output -Object ${{ steps.dockerbuild.outputs.MODULE_VERSION }}
+          Write-Host -Object 'Getting module version'
+          Write-Host -Object '${{ steps.dockerbuild.outputs.MODULE_VERSION }}'
         
