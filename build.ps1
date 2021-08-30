@@ -6,7 +6,7 @@ $WebClient = [System.Net.WebClient]::new()
 $AWSPowerShellURL = 'https://sdk-for-net.amazonwebservices.com/ps/v4/latest/AWS.Tools.zip'
 $DestinationPath = '{0}/AWS.Tools.zip' -f $PSScriptRoot
 
-$WebClient.DownloadFile($AWSPowerShellURL, 'AWS.Tools.zip')
+$WebClient.DownloadFile($AWSPowerShellURL, $DestinationPath)
 
 # Extract the AWS PowerShell module
 Expand-Archive -Path $DestinationPath -DestinationPath $env:PSModulePath.Split(':')[0]
