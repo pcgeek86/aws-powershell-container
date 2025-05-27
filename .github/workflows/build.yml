@@ -39,6 +39,13 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: ${{ steps.installawspwsh.outputs.MODULE_VERSION }}
 
+      # Enables multi-platform container image builds
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build Docker image
         id: dockerbuild
         uses: docker/build-push-action@v6
